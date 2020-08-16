@@ -4,11 +4,11 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-window.Vue = require('vue');
+require("./bootstrap");
+window.Vue = require("vue");
 
-import BootstrapVue from 'bootstrap-vue' //Importing
-Vue.use(BootstrapVue) // Telling Vue to use this in whole application
+import BootstrapVue from "bootstrap-vue"; //Importing
+Vue.use(BootstrapVue); // Telling Vue to use this in whole application
 
 /**
  * The following block of code may be used to automatically register your
@@ -21,7 +21,9 @@ Vue.use(BootstrapVue) // Telling Vue to use this in whole application
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('home', require('./components/Home.vue').default);
+Vue.component("navbar", require("./components/Navbar.vue").default);
+Vue.component("home", require("./components/Home.vue").default);
+Vue.component("articles", require("./components/Articles.vue").default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -30,5 +32,11 @@ Vue.component('home', require('./components/Home.vue').default);
  */
 
 const app = new Vue({
-    el: '#app',
+    el: "#app",
+    data: {
+        message: "Test"
+    },
+    mounted() {
+        console.log("Upload component", this.message);
+    }
 });

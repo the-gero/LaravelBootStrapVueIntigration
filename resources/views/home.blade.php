@@ -15,7 +15,6 @@
                     @endif
 
                     {{ __('You are logged in!') }}
-                    <home></home>
                 </div>
             </div>
         </div>
